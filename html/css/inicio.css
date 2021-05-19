@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    
+    box-sizing: border-box;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+
+.contendor{
+  width: 100%;
+   overflow-x: hidden;
+}
+header{
+    overflow: hidden;
+    min-height: 70px;
+    width: 100%;
+    margin: auto;
+}
+
+/*.imagen-fondo{
+    background: url('../img/thumb-1920-984566.jpg') #000  center center  ;
+    background-size: cover;
+  width: 100%;
+  min-height: 500px;
+}*/
+
+/*Lista de imagenes*/
+
+
+.slider{
+    width: 100%;
+    height: auto;
+max-height: 650px;
+  overflow: hidden;
+}
+
+.slider ul{
+    padding: 0;
+    display: flex;
+    width: 500%;
+    animation: cambio 20s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    60%{margin-left: -200%;}
+
+    70%{margin-left: -300%;}
+   80%{margin-left: -300%;}
+
+   85%{margin-left: -400%;}
+   100%{margin-left: -400%;}
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+}
+
+/*header nav*/ 
+.lista-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 2vh;
+    background:#17945e;
+}
+
+.ham{
+   display: none;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+background-color: transparent;
+transition: 0.2s 0.1s;
+}
+
+.ham:hover{
+    transform: rotate(360deg);
+}
+
+.ham span{
+    display: block;
+    background-color: white;
+    height: 3px;
+    width: 28px;
+    margin: 7px auto;
+    border-radius: 2px;
+}
+
+.enlaces-menu{
+    display: flex;
+    padding: 0;
+}
+.enlaces-menu li {
+    padding: 0 40px;
+    list-style-type:none;
+    transition: 0.3s;
+}
+
+.enlaces-menu li a{
+    transition: 0.3s;
+}
+
+.enlaces-menu li a{
+ text-decoration: none;
+ font-size: 1.1rem;
+ color: #f3f3f3;
+ font-weight: 600;
+}
+
+.enlaces-menu li a:hover{
+    padding: 0 20px 0 20px;
+    background-color: rgb(255,255, 255);
+    color: #000000;
+}
+
+/*Menu Responsive*/
+@media (max-width:991px){
+ 
+    .logo img{
+        padding-left: 25px;
+    }
+    .ham{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+    .lista-flex{
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 7.9px 0;
+    }
+    .enlaces-menu {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 98vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+    @keyframes muestramenu {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+  
+    .enlaces-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .enlaces-menu.activado{
+        display: flex;
+        animation:muestramenu 350ms ease-in-out both ;
+    }
+}
+
+.br-1.animado{
+    transform: rotate(-45deg) translate(-10px,4px);
+}
+
+.br-2.animado{
+   opacity: 0;
+}
+
+.br-3.animado{
+    transform: rotate(45deg) translate(-10px,-5px);
+}
+
+/*Descricion*/
+.descripcion{
+    margin-bottom: 15px;
+}
+
+.descripcion h1,
+.descripcion p{
+    text-align: center;
+    font-family: 'Tinos', serif;
+    padding-top: 10px;
+}
+
+.descripcion p{
+    font-size: 20px;
+}
+/*Descricion Responsibe*/
+@media (max-width:991px){
+    .descripcion h1{
+font-size: 30px;
+    }
+    .descripcion p{
+        font-size: 17px;
+        font-family: 'Tinos', serif;
+    }
+}
+
+/*Grid y Flex*/
+.contenedor-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-grid{
+  display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.contenedor-grid .casa ,
+.contenedor-grid .apartamento {
+   min-height: 187px;
+   position: relative;  
+}
+
+.contenedor-grid .casa  img,
+.contenedor-grid .apartamento  img{
+   display: block;
+    width: 100%;
+    height: 187px;
+}
+
+.casa p,
+.apartamento p{
+    text-align: center;
+    padding-right: 5px;
+}
+
+.interior-de-la-casa,
+.interior-del-apartamento{
+ display: flex;
+ justify-content: center;
+ margin-top: 5px;
+ color: #777;
+}
+
+
+.casa .content-venta .venta,
+.apartamento .content-venta .venta{
+ position: absolute;
+top: 0;
+color: #000000;
+background-color: rgba(255, 255, 255, 0.623);
+left: 0;
+font-size: 20px;
+padding: 20px;
+}
+
+.casa .content-venta .costo,
+.apartamento .content-venta .costo{
+ position: absolute;
+top: 70%;
+color: #ffffff;
+background-color: rgba(255, 255, 255, 0.623);
+left: 5%;
+font-size: 2rem;
+padding: 5px;
+}
+
+.casa .content-venta,
+.apartamento .content-venta{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 82%;
+    transition: 0.5s ease;
+    background-color: rgba(10, 10, 10, 0.452);
+    opacity: 0;
+}
+
+.casa:hover .content-venta,
+.apartamento:hover .content-venta{
+    opacity: 1;
+}
+
+/*Contenedor-grid Responsive*/
+@media (max-width:991px){
+    .contenedor-grid{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+/*Derechos*/
+footer .derechos-de-author{
+    text-align: center;
+    padding:60px 0 20px 0
+}
+
+/*Footer*/
+
+.informacion-grid{
+background-color: #363637;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+min-height: 450px;
+}
+
+ .bienvenidos,.menu,.contactos{
+    margin: auto;
+    padding-bottom: 150px;
+    font-family: 'Ledger', serif;
+    color: #ffffff;
+}
+
+.contactos h2{
+    text-align: center;
+}
+
+.bienvenidos> h2,p{
+    text-align: center;
+}
+
+.menu> ul li,a{
+    list-style: none;
+    text-decoration: none;
+    color: #ffffff;
+}
+/*FooterResponsive*/
+@media (max-width:991px){
+    footer{
+        height: auto;
+    }
+    .informacion-grid{
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(3,minmax(725px,1fr));
+    }
+
+    .bienvenidos{
+     padding: 0 0 350px 0;
+    }
+    .menu{
+        padding: 0 0 600px 0;
+       }
+    .contactos{
+        margin: 0 0 100px 0;
+    }
+}
